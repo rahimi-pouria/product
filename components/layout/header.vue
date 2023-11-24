@@ -1,5 +1,3 @@
-import type { useMainMenu } from '~/sotres/menu'; import type { useMainMenu }
-from '~/sotres/menu';
 <template>
   <div class="w-full container mx-auto">
     <nav class="flex items-center justify-between flex-wrap">

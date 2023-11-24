@@ -1,21 +1,27 @@
 import { defineStore } from "pinia";
-import axios from 'axios'
+import axios from "axios";
 
 export const useGetAllProduct = defineStore('product', {
+    // state
     state: () => ({
         data: []
     }),
+    // getters
     getters: {
-        getProducts(state){
-            return state.data
-        }
-    },
+        setData: (state: any) => state.data,
+      },
+    //   actions
     actions: {
-        async getProducts(){
-            try{
-                const response = await axios.get('https://fakestoreapi.com/products')
-                console.log(response)
-            }catch(error){}
+        async getProducts() {
+            try {
+                const response = await axios.get('https://fakestoreapi.com/products');
+                this.data = response.data;
+            } catch (error) {
+                console.error(error);
+            }
         }
     }
 })
+export const setupStore = () => {
+    useGetAllProduct;
+};

@@ -17,6 +17,18 @@ body {
 .border-btn{
   border: 1.5px solid var(--gray-50, #E9EDF5);
 }
+.text-color{
+  color: #57728E;
+}
+.custome-radius{
+  border-radius: 4px 16px 16px 4px;
+}
+.showtech .inviteTech:nth-child(2){
+  padding: 50px 17px 50px 106px;
+}
+.showdescription .inviteTech:nth-child(2){
+  padding: 25px 17px 25px 106px;
+}
 // responsive 
 @media (min-width: 1280px){
   .container {

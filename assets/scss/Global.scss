@@ -1,0 +1,25 @@
+// import scss files
+@import 'fonts.scss';
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e9edf5;
+  direction: rtl;
+}
+.shadow-product{
+  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+}
+.border-btn{
+  border: 1.5px solid var(--gray-50, #E9EDF5);
+}
+// responsive 
+@media (min-width: 1280px){
+  .container {
+    max-width: 1100px !important;
+  }
+}

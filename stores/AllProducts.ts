@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 
 export const useGetAllProduct = defineStore('product', {
-    // state
+    // create state
     state: () => ({
         data: []
     }),

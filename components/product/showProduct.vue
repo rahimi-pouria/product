@@ -96,11 +96,14 @@
           />
         </div>
         <div class="flex flex-col gap-[20px]">
-          <div class="flex gap-[10px] items-center">
+          <div
+            v-for="(item, i) in category"
+            class="flex gap-[10px] items-center"
+          >
             <input type="checkbox" id="check1" />
-            <label class="f12-500 text-[#344456]" for="check1"
-              >تعداد کم به زیاد</label
-            >
+            <label class="f12-500 text-[#344456]" for="check1">{{
+              item
+            }}</label>
           </div>
         </div>
       </div>
@@ -152,12 +155,17 @@
 </template>
 <script setup>
 import { useGetAllProduct } from "@/stores/AllProducts";
-import axios from "axios";
+let category = ref([]);
 const getCategory = async () => {
-  const response = fetch("https://fakestoreapi.com/products/categories").then(
-    (response) => response.json()
-  );
-  console.log(response.data);
+  try {
+    const response = await fetch(
+      "https://fakestoreapi.com/products/categories"
+    );
+    const data = await response.json();
+    category.value = data;
+  } catch (error) {
+    console.error(error);
+  }
 };
 const product = useGetAllProduct();
 

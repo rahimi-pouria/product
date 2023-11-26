@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full container mx-auto">
+  <div class="w-full container mx-auto items-center">
     <nav class="flex items-center justify-between flex-wrap">
       <div class="block lg:hidden">
         <button
@@ -25,12 +25,18 @@
             <img :src="item.icon" alt="" />
           </div>
         </div>
-        <div class="w-[10%] flex justify-end">
-          <a
-            href="#"
-            class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-            >Download</a
+        <div class="w-[10%] flex justify-end items-center">
+          <nuxt-link
+            class="border rounded-[16px] text-center flex items-center justify-center px-[16px] py-[12px] bg-[#E20054] text-white border-[#E20054]"
+            to="/"
           >
+            تماس
+            <img
+              class="w-[16px] h-[16px]"
+              src="@/assets/img/svg/phone.svg"
+              alt=""
+            />
+          </nuxt-link>
         </div>
       </div>
     </nav>

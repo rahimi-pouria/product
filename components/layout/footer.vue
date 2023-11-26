@@ -14,7 +14,11 @@
         :key="i"
         class="flex flex-col gap-[12px]"
       >
-        <nuxt-link :to="item.path">{{ item.name }}</nuxt-link>
+        <nuxt-link
+          class="text-[#30445B] hover:text-[#E20054] f13-500"
+          :to="item.path"
+          >{{ item.name }}</nuxt-link
+        >
       </div>
     </div>
     <!-- Site guide menu -->
@@ -25,7 +29,11 @@
         :key="i"
         class="flex flex-col gap-[12px]"
       >
-        <nuxt-link :to="item.path">{{ item.name }}</nuxt-link>
+        <nuxt-link
+          class="text-[#30445B] hover:text-[#E20054] f13-500"
+          :to="item.path"
+          >{{ item.name }}</nuxt-link
+        >
       </div>
     </div>
     <!-- Site guide menu -->
@@ -36,7 +44,11 @@
         :key="i"
         class="flex flex-col gap-[12px]"
       >
-        <nuxt-link :to="item.path">{{ item.name }}</nuxt-link>
+        <nuxt-link
+          class="text-[#30445B] hover:text-[#E20054] f13-500"
+          :to="item.path"
+          >{{ item.name }}</nuxt-link
+        >
       </div>
     </div>
   </div>

@@ -145,8 +145,8 @@
             class="text-[#E20054] w-full border-btn justify-center items-center flex gap-[8px] px-[16px] py-[12px] rounded-[16px]"
             :to="`/product/${item.id}`"
           >
-            مشاهده جزیات
-            <img src="@/assets/img/svg/left.svg" alt="" />
+            مشاهده جزییات
+            <img class="mt-[5px]" src="@/assets/img/svg/left.svg" alt="" />
           </nuxt-link>
         </div>
       </div>

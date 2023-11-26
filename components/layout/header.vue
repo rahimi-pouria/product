@@ -15,7 +15,7 @@
           </svg>
         </button>
       </div>
-      <div class="w-[100%] flex lg:justify-center lg:gap-[229.5px]">
+      <div class="w-[100%] flex lg:items-center lg:gap-[229.5px]">
         <div class="w-[90%] lg:justify-end flex gap-[24px]">
           <div
             v-for="(item, i) in menu.Mainmenu"

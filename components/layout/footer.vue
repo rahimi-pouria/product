@@ -50,11 +50,14 @@
         :key="i"
         class="flex flex-col gap-[12px]"
       >
-        <nuxt-link
-          class="text-[#30445B] hover:text-[#E20054] f13-500"
-          :to="item.path"
-          >{{ item.name }}</nuxt-link
-        >
+        <div class="flex w-full gap-[12px]">
+          <img class="w-[24px] h-[24px]" :src="item.icon" alt="" />
+          <nuxt-link
+            class="text-[#30445B] hover:text-[#E20054] f13-500"
+            :to="item.path"
+            >{{ item.name }}</nuxt-link
+          >
+        </div>
       </div>
     </div>
   </div>

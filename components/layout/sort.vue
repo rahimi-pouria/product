@@ -10,25 +10,25 @@
     </div>
     <div class="flex flex-col gap-[20px]">
       <div class="flex gap-[10px] items-center">
-        <input type="radio" id="check1" />
+        <input @click="sortMinProduct" type="radio" id="check1" />
         <label class="f12-500 text-[#344456]" for="check1"
           >تعداد کم به زیاد</label
         >
       </div>
       <div class="flex gap-[10px] items-center">
-        <input type="radio" id="check1" />
+        <input @click="sortMaxProduct" type="radio" id="check1" />
         <label class="f12-500 text-[#344456]" for="check1"
           >تعداد زیاد به کم</label
         >
       </div>
       <div class="flex gap-[10px] items-center">
-        <input type="radio" id="check1" />
+        <input @click="sortMinRateProduct" type="radio" id="check1" />
         <label class="f12-500 text-[#344456]" for="check1"
           >رتبه زیاد به کم</label
         >
       </div>
       <div class="flex gap-[10px] items-center">
-        <input type="radio" id="check1" />
+        <input @click="sortMaxRateProduct" type="radio" id="check1" />
         <label class="f12-500 text-[#344456]" for="check1"
           >تعداد کم به زیاد</label
         >
@@ -36,7 +36,20 @@
     </div>
   </div>
 </template>
-<script>
-export default {};
+<script setup>
+const props = defineProps({
+  sortMinProduct: {
+    type: Function,
+  },
+  sortMaxProduct: {
+    type: Function,
+  },
+  sortMinRateProduct: {
+    type: Function,
+  },
+  sortMaxRateProduct: {
+    type: Function,
+  },
+});
 </script>
 <style lang=""></style>

@@ -42,7 +42,7 @@
     <!-- button search -->
     <button
       @click="seachProduct"
-      class="bg-[#E20054] rounded-[12px] text-white flex items-center justify-center py-[10px] px-[124px]"
+      class="bg-[#E20054] rounded-[12px] w-[100%] text-white flex items-center justify-center search-link-mobile py-[10px] px-[124px]"
     >
       جستجو
     </button>

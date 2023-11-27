@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col gap-[24px]">
+  <div class="w-full flex flex-col gap-[24px] layout-resposive">
     <div class="flex w-full bg-white py-[40px] header">
       <!-- header layout -->
       <LayoutHeader />

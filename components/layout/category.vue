@@ -23,6 +23,9 @@
 <script setup>
 const props = defineProps({
   category: String,
+  choiceCategory: {
+    type: Function,
+  },
 });
 </script>
 <style lang=""></style>

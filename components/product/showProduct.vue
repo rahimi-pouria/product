@@ -1,24 +1,31 @@
 <template>
-  <div class="w-full container mx-auto flex gap-[24px]">
+  <div
+    class="w-full show-product sm:flex-wrap container mx-auto flex gap-[24px]"
+  >
     <!-- sidbar filter product -->
-    <div class="flex flex-col md:w-[25%] gap-[16px]">
+    <div class="flex flex-col md:w-[25%] sm:w-full gap-[16px]">
       <!-- search -->
       <layout-search :seachProduct="seachProduct" v-model="textInput" />
       <!-- sort product -->
-      <layout-sort />
+      <layout-sort
+        :sortMinProduct="sortMinProduct"
+        :sortMaxProduct="sortMaxProduct"
+        :sortMinRateProduct="sortMinRateProduct"
+        :sortMaxRateProduct="sortMaxRateProduct"
+      />
       <!-- category -->
-      <layout-category :category="category" />
+      <layout-category :category="category" :choiceCategory="choiceCategory" />
     </div>
     <!-- show all products -->
-    <div class="flex flex-col md:w-[75%] gap-[24px]">
+    <div class="flex flex-col md:w-[71%] responsive-product gap-[24px]">
       <!-- show filter product -->
       <div
-        class="flex w-full items-center bg-white justify-between rounded-[24px] pt-[16px] pr-[24px] pb-[16px] pl-[16px]"
+        class="flex w-[100%] items-center show-search-mobile bg-white justify-between rounded-[24px] pt-[16px] pr-[24px] pb-[16px] pl-[16px]"
       >
-        <p>فیلترهای اعمال شده</p>
+        <p class="f14-700">فیلترهای اعمال شده</p>
         <span
           :class="{ hideClear: hideClear }"
-          class="bg-[#FCE5EE] flex justify-between items-center w-[30%] p-[8px] rounded-[16px]"
+          class="bg-[#FCE5EE] flex justify-between items-center md:w-[30%] p-[8px] rounded-[16px]"
         >
           <img class="mt-[5px]" src="@/assets/img/svg/u_search.svg" alt="" />
           {{ showresult }}
@@ -30,20 +37,23 @@
         </span>
       </div>
       <!-- show product -->
-      <div class="flex w-full gap-[16px] flex-wrap" v-if="!showSearch">
+      <div
+        class="flex w-[100%] gap-[16px] md:flex-wrap product-list"
+        v-if="!showSearch"
+      >
         <div
           v-for="(item, i) in product.data"
           :key="i"
-          class="w-[32%] bg-white shadow-product p-[8px] rounded-[24px]"
+          class="md:w-[31%] card-product bg-white shadow-product p-[8px] rounded-[24px]"
         >
           <!-- header card -->
           <img
-            class="rounded-[16px] border p-2 w-full md:h-[170px]"
+            class="rounded-[16px] border p-2 md:w-full md:h-[170px]"
             :src="item.image"
             alt=""
           />
           <!-- body card -->
-          <div class="flex md:w-[250px] p-[16px]">
+          <div class="flex md:w-[160px] p-[16px]">
             <p class="f14-700 truncate">{{ item.title }}</p>
           </div>
           <!-- footer card  -->
@@ -61,7 +71,7 @@
         <div
           v-for="(item, i) in choiseSearch"
           :key="i"
-          class="w-[32%] bg-white shadow-product p-[8px] rounded-[24px]"
+          class="md:w-[31%] bg-white shadow-product p-[8px] rounded-[24px]"
         >
           <!-- header card -->
           <img
@@ -70,7 +80,7 @@
             alt=""
           />
           <!-- body card -->
-          <div class="flex md:w-[250px] p-[16px]">
+          <div class="flex md:w-[160px] p-[16px]">
             <p class="f14-700 truncate">{{ item.title }}</p>
           </div>
           <!-- footer card  -->
@@ -99,6 +109,10 @@ let filterProduct = ref([]);
 let showSearch = ref(false);
 let showresult = ref("");
 let hideClear = ref(true);
+let minSort = ref([]);
+let maxSort = ref([]);
+let minRateSort = ref([]);
+let maxRateSort = ref([]);
 // send request and get category product
 const getCategory = async () => {
   try {
@@ -135,6 +149,34 @@ const resetSearch = () => {
   hideClear = true;
   showSearch = true;
 };
+
+// function sort product a - b
+
+const sortMinProduct = () => {
+  minSort = product.data.sort((a, b) => a.rating.count - b.rating.count);
+};
+
+// function sort product  - b
+
+const sortMaxProduct = () => {
+  maxSort = product.data.sort((b, a) => a.rating.count - b.rating.count);
+};
+
+// function min rate product a - b
+
+const sortMinRateProduct = () => {
+  minRateSort = product.data.sort((a, b) => a.rating.rate - b.rating.rate);
+};
+
+// function sort max Rate product  - b
+
+const sortMaxRateProduct = () => {
+  maxRateSort = product.data.sort((b, a) => a.rating.rate - b.rating.rate);
+};
+
+// filter in category
+
+const choiceCategory = () => {};
 
 // call functions
 showProducts();

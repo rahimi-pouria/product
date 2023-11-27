@@ -7,11 +7,11 @@
         <p class="f18-700 text-[#0A2A51]">{{ showDataProduct.title }}</p>
       </div>
 
-      <img
-        class="w-full rounded-[16px] border p-3 md:h-[310px]"
-        :src="showDataProduct.image"
-        alt=""
-      />
+      <div
+        class="flex w-full justify-center rounded-[16px] items-center border p-3"
+      >
+        <img class="w-[60%] md:h-[310px]" :src="showDataProduct.image" alt="" />
+      </div>
     </div>
     <!-- Specifications  -->
     <div

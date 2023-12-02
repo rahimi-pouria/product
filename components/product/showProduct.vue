@@ -48,7 +48,7 @@
         >
           <!-- header card -->
           <img
-            class="rounded-[16px] border p-2 md:w-full md:h-[170px]"
+            class="rounded-[16px] object-cover md:w-full md:h-[170px]"
             :src="item.image"
             alt=""
           />
@@ -75,7 +75,7 @@
         >
           <!-- header card -->
           <img
-            class="rounded-[16px] border p-2 w-full md:h-[170px]"
+            class="rounded-[16px] object-cover border p-2 w-full md:h-[170px]"
             :src="item.image"
             alt=""
           />
